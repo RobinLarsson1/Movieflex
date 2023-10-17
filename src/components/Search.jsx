@@ -29,9 +29,9 @@ const Search = () => {
         filteredMovies.map((movie) => (
           <ul key={movie.Title}>
             <li>{movie.Genre || "Dokumentär"}</li>
-            <li>{movie.Premiere}</li>
-            <li>{movie.Runtime}</li>
-            <li>{movie.Language}</li>
+            <li> Released: {movie.Premiere}</li>
+            <li> Duration: {movie.Runtime}</li>
+            <li> Language: {movie.Language}</li>
           </ul>
         ))}
     </section>
