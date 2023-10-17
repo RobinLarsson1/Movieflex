@@ -3,6 +3,9 @@ import "./App.css";
 // import { groupMoviesByLanguage } from "./data/getDataByLanguage";
 import Language from "./components/language";
 import Month from "./components/releaseMonth";
+import Duration from "./components/duration";
+import Genre from "./components/genre";
+import Search from "./components/Search";
 
 // const moviesByLanguage = groupMoviesByLanguage();
 // console.log("Filmer grupperade efter språk:", moviesByLanguage);
@@ -18,6 +21,9 @@ function App() {
     <main>
       <Language />
       <Month />
+      <Duration />
+      <Genre />
+      <Search />
     </main>
   );
 }

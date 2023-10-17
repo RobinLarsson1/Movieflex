@@ -47,7 +47,7 @@ const Month = () => {
         <Bar data={documentaryMoviesByMonthConfig} />;
       </div>
       <div className="specials">
-        <h2>Documentary movies by release month!</h2>
+        <h2>Specials movies by release month!</h2>
         <Bar data={specialsMoviesByMonthConfig} />;
       </div>
     </section>

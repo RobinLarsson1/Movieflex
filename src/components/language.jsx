@@ -19,9 +19,7 @@ const Language = () => {
   return (
     <section>
       <h2>Movies by language!</h2>
-      <div className="pie-div">
-        <Pie data={allMoviesByLanguageConfig} />
-      </div>
+      <Pie data={allMoviesByLanguageConfig} />
     </section>
   );
 };
