@@ -20,6 +20,8 @@ export function getAllMoviesByLanguageConfig(documentaries, specials, feature) {
     (language) => languageCount[language]
   );
 
+  languageCountsArray.sort((a, b) => b - a);
+
   return {
     labels: uniqueLanguages,
     datasets: [

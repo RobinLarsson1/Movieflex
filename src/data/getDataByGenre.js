@@ -21,6 +21,7 @@ export function getAllMoviesByGenreConfig(documentaries, specials, feature) {
 
   const uniqueGenres = Object.keys(genreData);
   const genreCountArray = uniqueGenres.map((genre) => genreData[genre]);
+  genreCountArray.sort((a, b) => b - a);
 
   return {
     labels: uniqueGenres,
