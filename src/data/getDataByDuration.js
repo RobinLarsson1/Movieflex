@@ -14,13 +14,13 @@ export function getAllMoviesByDurationConfig(documentaries, specials, feature) {
     }
   });
 
-  const uniqueLenghts = Object.keys(durationData);
-  const durationCountArray = uniqueLenghts.map(
+  const uniqueLengths = Object.keys(durationData);
+  const durationCountArray = uniqueLengths.map(
     (duration) => durationData[duration]
   );
 
   return {
-    labels: uniqueLenghts,
+    labels: uniqueLengths,
     datasets: [
       {
         label: "Length of movie",

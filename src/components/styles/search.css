@@ -1,0 +1,22 @@
+@import "./root.css";
+
+.search {
+  margin: 1em;
+  height: 10em;
+}
+.search-input {
+  font-size: 18px;
+  padding: 0.5em 0.75em;
+  background-color: var(--secondary-blue);
+  border: none;
+  border-radius: 5px;
+  color: var(--detail-white);
+  margin-bottom: 2em;
+}
+li {
+  list-style: none;
+  color: var(--detail-white);
+}
+.search-li {
+  padding: 1em 0em;
+}

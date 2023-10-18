@@ -1,0 +1,55 @@
+@import "./root.css";
+
+.nav-bar {
+  background-color: var(--secondary-blue);
+  height: 100vh;
+  width: 15em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: 0; /* Låser nav-baren på vänster sida */
+  top: 0; /* Låser nav-baren högst upp på fönstret */
+}
+.logo {
+  display: flex;
+  align-items: center;
+  color: var(--detail-white);
+  padding: 1em;
+  width: 100%;
+}
+.logo-icon {
+  font-size: 30px;
+  color: var(--detail-purple);
+}
+.li-icon {
+  /* color: var(--detail-white); */
+  font-size: 24px;
+}
+.link-ul {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+.link-ul {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  list-style: none;
+  height: 20em;
+}
+.li {
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: p;
+  color: var(--detail-white);
+}
+.li > * {
+  margin-right: 1em;
+}
+.nav-h2 {
+  color: var(--detail-white);
+}

@@ -5,6 +5,7 @@ import { Pie } from "react-chartjs-2";
 import documentariesData from "../data/documentaries.json";
 import specialsData from "../data/specials.json";
 import featureData from "../data/feature-films.json";
+import "./styles/genre.css";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -16,7 +17,7 @@ const Genre = () => {
   );
 
   return (
-    <section>
+    <section className="genre-sect">
       <h2>Movies by genres!</h2>
       <Pie data={allMoviesByGenreConfig} />
     </section>
