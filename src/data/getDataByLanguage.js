@@ -1,12 +1,9 @@
 const colors = ["#74C1FF", "#7266FF", "#D3D5D9"];
 
-export function getAllMoviesByLanguageConfig(documentaries, specials, feature) {
-  // Kombinera data från alla kategorier
-  const allData = [...documentaries, ...specials, ...feature];
-
+export function getMoviesByLanguageConfig(movies) {
   const languageCount = {};
 
-  allData.forEach((movie) => {
+  movies.forEach((movie) => {
     const language = movie.Language;
     if (languageCount[language]) {
       languageCount[language]++;
@@ -20,16 +17,15 @@ export function getAllMoviesByLanguageConfig(documentaries, specials, feature) {
     (language) => languageCount[language]
   );
 
-  // languageCountsArray.sort((a, b) => b  a);
-
   return {
     labels: uniqueLanguages,
     datasets: [
       {
         label: "Number of movies",
         data: languageCountsArray,
-        backgroundColor: colors, // Anpassa färger efter ditt behov
+        backgroundColor: colors,
         borderWidth: 0,
+        // hoverBackgroundColor: "#D33636",
       },
     ],
   };

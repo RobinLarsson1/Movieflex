@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { getAllMoviesByLanguageConfig } from "../data/getDataByLanguage";
 import {
   Chart as ChartJS,
   CategoryScale,
