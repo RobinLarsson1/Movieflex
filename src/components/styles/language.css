@@ -15,7 +15,6 @@
   grid-template-rows: 1fr 1fr; /* Två rader, den första tar 1 del av utrymmet, den andra 2 delar. */
   grid-template-columns: 1fr 1fr;
   margin-left: 2.5em;
-  width: 70vw;
 }
 
 .language-pie {
@@ -23,7 +22,29 @@
   margin: 0.5em;
   padding: 1em;
   border-radius: 5px;
-  min-width: 20em;
+  width: 35em;
+
+  position: relative;
+}
+.language-pie::before,
+.language-pie::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--background-blue),
+    var(--secondary-blue),
+    var(--detail-purple),
+    var(--secondary-blue),
+    var(--background-blue)
+  );
+  border-radius: inherit;
+  animation: rotation 15s linear infinite;
+}
+.language-pie::after {
+  filter: blur(1em);
 }
 
 .language-text {
@@ -32,4 +53,7 @@
   align-items: start;
   margin-top: 3em;
   margin-left: 3em;
+}
+.language-h3 {
+  color: var(--detail-white);
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./styles/duration.css";
 import { getAllMoviesByDurationConfig } from "../data/getDataByDuration";
 import {
   Chart as ChartJS,
@@ -33,9 +34,9 @@ const Duration = () => {
   );
   console.log(allMoviesByDurationConfig);
   return (
-    <section>
-      <h2>Movies by duration!</h2>
-      <Line data={allMoviesByDurationConfig} />;
+    <section className="duration-sect">
+      <h2 className="duration-h2">Movies by duration!</h2>
+      <Line data={allMoviesByDurationConfig} />
     </section>
   );
 };

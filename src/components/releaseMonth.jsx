@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./styles/release.css";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -36,18 +37,18 @@ const Month = () => {
   const specialsMoviesByMonthConfig = getSpecialsByMonthConfig(specialsData);
 
   return (
-    <section>
-      <div className="feature">
-        <h2>Feature movies by release month!</h2>
-        <Bar data={featureMoviesByMonthConfig} />;
+    <section className="release-sect">
+      <div className="release feature">
+        <h2 className="release-h2">Feature movies by release month!</h2>
+        <Bar data={featureMoviesByMonthConfig} />
       </div>
-      <div className="documentary">
-        <h2>Documentary movies by release month!</h2>
-        <Bar data={documentaryMoviesByMonthConfig} />;
+      <div className="release documentary">
+        <h2 className="release-h2">Documentary movies by release month!</h2>
+        <Bar data={documentaryMoviesByMonthConfig} />
       </div>
-      <div className="specials">
-        <h2>Specials movies by release month!</h2>
-        <Bar data={specialsMoviesByMonthConfig} />;
+      <div className="release specials">
+        <h2 className="release-h2">Specials movies by release month!</h2>
+        <Bar data={specialsMoviesByMonthConfig} />
       </div>
     </section>
   );

@@ -1,17 +1,28 @@
 @import "./root.css";
 
-.genre-sect {
-  background-color: var(--secondary-blue);
-  width: 60em;
+.release-sect {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   margin: 2em;
-  padding: 2em;
+}
+.release-sect > * {
+  background-color: var(--secondary-blue);
+  padding: 1em;
+  margin: 0.5em;
   border-radius: 5px;
-
-  /*skugga*/
+  width: 40em;
+}
+.release-h2 {
+  color: var(--detail-white);
+  font-size: 18px;
+}
+.release {
   position: relative;
 }
-.genre-sect::before,
-.genre-sect::after {
+
+.release::before,
+.release::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -27,19 +38,6 @@
   border-radius: inherit;
   animation: rotation 20s linear infinite;
 }
-.genre-sect::after {
+.release::after {
   filter: blur(3.5em);
-}
-
-.genre-h2 {
-  color: var(--detail-white);
-}
-
-@keyframes rotation {
-  0% {
-    --gradient-angle: 0deg;
-  }
-  100% {
-    --gradient-angle: 360deg;
-  }
 }

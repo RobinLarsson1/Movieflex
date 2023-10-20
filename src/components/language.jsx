@@ -20,11 +20,6 @@ const LanguageCharts = () => {
   const featureConfig = getMoviesByLanguageConfig(featureData);
   const allMoviesConfig = getMoviesByLanguageConfig(allMoviesData);
 
-  const pieChartStyles = {
-    width: "400px", // Ange önskad bredd
-    height: "400px", // Ange önskad höjd
-  };
-
   return (
     <section>
       <motion.div
@@ -43,20 +38,20 @@ const LanguageCharts = () => {
       </motion.div>
       <div className="language-chart">
         <motion.div className="language-pie">
-          <h3>All Movies</h3>
-          <Pie data={allMoviesConfig} style={pieChartStyles} />
+          <h3 className="language-h3">All Movies</h3>
+          <Pie data={allMoviesConfig} />
         </motion.div>
         <div className="language-pie">
-          <h3>Documentaries</h3>
-          <Pie data={documentariesConfig} style={pieChartStyles} />
+          <h3 className="language-h3">Documentaries</h3>
+          <Pie data={documentariesConfig} />
         </div>
         <div className="language-pie">
-          <h3>Specials</h3>
-          <Pie data={specialsConfig} style={pieChartStyles} />
+          <h3 className="language-h3">Specials</h3>
+          <Pie data={specialsConfig} />
         </div>
         <div className="language-pie">
-          <h3>Feature Films</h3>
-          <Pie data={featureConfig} style={pieChartStyles} className="pie" />
+          <h3 className="language-h3">Feature Films</h3>
+          <Pie data={featureConfig} className="pie" />
         </div>
       </div>
     </section>

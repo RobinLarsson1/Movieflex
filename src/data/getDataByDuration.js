@@ -1,4 +1,4 @@
-const colors = ["#051200", "#79D61B", "#ECEFE8"];
+const colors = ["#f2f3f4"];
 
 export function getAllMoviesByDurationConfig(documentaries, specials, feature) {
   const allData = [...documentaries, ...specials, ...feature];
@@ -19,13 +19,19 @@ export function getAllMoviesByDurationConfig(documentaries, specials, feature) {
     (duration) => durationData[duration]
   );
 
+  const labels = uniqueLengths;
+
   return {
-    labels: uniqueLengths,
+    labels,
     datasets: [
       {
         label: "Length of movie",
+        borderColor: "#7259ff",
         data: durationCountArray,
         backgroundColor: colors,
+        lineTension: 0.8,
+        hitRadius: 30,
+        hoverRadius: 8,
       },
     ],
   };

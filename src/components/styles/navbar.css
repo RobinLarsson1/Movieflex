@@ -1,5 +1,11 @@
 @import "./root.css";
 
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .nav-bar {
   background-color: var(--secondary-blue);
   height: 100vh;
@@ -52,4 +58,8 @@
 }
 .nav-h2 {
   color: var(--detail-white);
+}
+.menu-icon {
+  color: var(--detail-white);
+  font-size: 30px;
 }

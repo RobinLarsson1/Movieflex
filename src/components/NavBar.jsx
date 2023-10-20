@@ -1,9 +1,10 @@
 import React from "react";
 import { RiMovieLine } from "react-icons/ri";
 import { BsGlobeEuropeAfrica } from "react-icons/bs";
-import { BiTimeFive } from "react-icons/bi";
 import { BsCalendar2Date } from "react-icons/bs";
 import { LiaTheaterMasksSolid } from "react-icons/lia";
+import { BiTimeFive } from "react-icons/bi";
+import { HiMenuAlt2 } from "react-icons/hi";
 import { motion } from "framer-motion";
 import "./styles/navbar.css";
 import { Link } from "react-router-dom";
@@ -26,6 +27,7 @@ const Navbar = () => {
         <Link to="/">
           <h2 className="nav-h2">Movieflex</h2>
         </Link>
+        <HiMenuAlt2 className="menu-icon" />
       </div>
       <ul className="link-ul">
         <Link to="/genres">
@@ -63,7 +65,7 @@ const Navbar = () => {
         </Link>
         <Link to="/release">
           <motion.li
-            className="release li"
+            className="released li"
             variants={liVariants}
             whileHover="hover"
             whileTap="tap"

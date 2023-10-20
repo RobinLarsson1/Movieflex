@@ -5,6 +5,7 @@ import Genre from "../components/genre.jsx";
 import Language from "../components/language.jsx";
 import Duration from "../components/duration.jsx";
 import ReleaseMonth from "../components/releaseMonth.jsx";
+import Home from "../components/Home.jsx";
 
 export const router = createHashRouter([
   {
@@ -16,6 +17,7 @@ export const router = createHashRouter([
         element: (
           <>
             <Search />
+            <Home />
           </>
         ),
       },

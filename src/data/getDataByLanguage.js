@@ -1,6 +1,4 @@
-const colors = ["#74C1FF", "#7266FF", "#D3D5D9"];
-
-export function getMoviesByLanguageConfig(movies) {
+export function getMoviesByLanguageConfig(movies, ascending = false) {
   const languageCount = {};
 
   movies.forEach((movie) => {
@@ -17,14 +15,39 @@ export function getMoviesByLanguageConfig(movies) {
     (language) => languageCount[language]
   );
 
+  const languageData = uniqueLanguages.map((language, index) => ({
+    language: language,
+    count: languageCountsArray[index],
+  }));
+
+  languageData.sort((a, b) =>
+    ascending ? a.count - b.count : b.count - a.count
+  );
+
+  uniqueLanguages.length = 0;
+  languageCountsArray.length = 0;
+
+  languageData.forEach((data) => {
+    uniqueLanguages.push(data.language);
+    languageCountsArray.push(data.count);
+  });
+
+  const border = "#7259ff"; // Färg för gränsen (border)
+  const backgroundColor = "rgba(19, 25, 47, 0.5)";
+
   return {
     labels: uniqueLanguages,
     datasets: [
       {
         label: "Number of movies",
         data: languageCountsArray,
-        backgroundColor: colors,
-        borderWidth: 0,
+        backgroundColor: backgroundColor, // Sätt fyllningsfärgen till transparent
+        borderColor: border,
+        borderWidth: 1.5,
+        radius: 170,
+        lineTension: 0.8,
+        hoverBackgroundColor: "#7259ff",
+        borderRadius: 10,
         // hoverBackgroundColor: "#D33636",
       },
     ],

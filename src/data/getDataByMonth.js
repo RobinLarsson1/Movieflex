@@ -47,13 +47,19 @@ export function groupMoviesByMonth(data) {
 export function generateMonthConfig(data, title, colors) {
   const monthData = groupMoviesByMonth(data);
 
+  const border = "#7259ff"; // Färg för gränsen (border)
+  const backgroundColor = "rgba(19, 25, 47, 0.5)";
+
   return {
     labels: Object.keys(monthData),
     datasets: [
       {
         label: title,
         data: Object.values(monthData),
-        backgroundColor: colors, // Anpassa färger efter ditt behov
+        backgroundColor: backgroundColor, // Sätt fyllningsfärgen till transparent
+        borderColor: border,
+        borderWidth: 2,
+        borderRadius: 10,
       },
     ],
   };

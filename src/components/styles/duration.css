@@ -1,17 +1,16 @@
 @import "./root.css";
 
-.genre-sect {
+.duration-sect {
   background-color: var(--secondary-blue);
   width: 60em;
   margin: 2em;
   padding: 2em;
   border-radius: 5px;
-
-  /*skugga*/
   position: relative;
 }
-.genre-sect::before,
-.genre-sect::after {
+
+.duration-sect::before,
+.duration-sect::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -25,21 +24,11 @@
     var(--background-blue)
   );
   border-radius: inherit;
-  animation: rotation 20s linear infinite;
+  animation: rotation 15s linear infinite;
 }
-.genre-sect::after {
+.duration-sect::after {
   filter: blur(3.5em);
 }
-
-.genre-h2 {
+.duration-h2 {
   color: var(--detail-white);
-}
-
-@keyframes rotation {
-  0% {
-    --gradient-angle: 0deg;
-  }
-  100% {
-    --gradient-angle: 360deg;
-  }
 }

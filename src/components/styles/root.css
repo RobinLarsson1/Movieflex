@@ -5,3 +5,9 @@
   --detail-purple: #7259ff;
   --detail-white: #f2f3f4;
 }
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
