@@ -28,6 +28,7 @@ export function groupMoviesByMonth(data) {
     if (!monthsData[month]) {
       monthsData[month] = 0;
     }
+   
 
     monthsData[month]++;
   });
@@ -49,13 +50,31 @@ export function generateMonthConfig(data, title, colors) {
 
   const border = "#7259ff"; // Färg för gränsen (border)
   const backgroundColor = "rgba(19, 25, 47, 0.5)";
+  
+  // Skapa en lista med alla månader
+  const allMonths = monthNames;
+
+  // Fyll i nollor för de månader som saknar data
+  allMonths.forEach((month) => {
+    if (!monthData[month]) {
+      monthData[month] = 0;
+    }
+  });
+
+  // Sortera månaderna i ordning
+  const sortedMonthData = Object.keys(monthData)
+    .sort((a, b) => monthNames.indexOf(a) - monthNames.indexOf(b))
+    .reduce((sorted, key) => {
+      sorted[key] = monthData[key];
+      return sorted;
+    }, {});
 
   return {
-    labels: Object.keys(monthData),
+    labels: Object.keys(sortedMonthData),
     datasets: [
       {
         label: title,
-        data: Object.values(monthData),
+        data: Object.values(sortedMonthData),
         backgroundColor: backgroundColor, // Sätt fyllningsfärgen till transparent
         borderColor: border,
         borderWidth: 2,
@@ -65,14 +84,14 @@ export function generateMonthConfig(data, title, colors) {
   };
 }
 
-// Använd funktionerna för att generera konfigurationer för olika kategorier
-export function getDocumentariesByMonthConfig() {
-  return generateMonthConfig(
-    documentariesData,
-    "Documentaries by Month",
-    colors
-  );
-}
+  // Använd funktionerna för att generera konfigurationer för olika kategorier
+  export function getDocumentariesByMonthConfig() {
+    return generateMonthConfig(
+      documentariesData,
+      "Documentaries by Month",
+      colors
+    );
+  }
 
 export function getFeatureByMonthConfig() {
   return generateMonthConfig(featureData, "Feature Films", colors);
