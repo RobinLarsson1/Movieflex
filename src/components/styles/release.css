@@ -1,12 +1,13 @@
 @import "./root.css";
 
 .release-sect {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  margin: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 2.5em;
+  gap: 3em;
+  margin-top: 2em;
 }
-.release-sect > * {
+.release-sect > *.release {
   background-color: var(--secondary-blue);
   padding: 1em;
   margin: 0.5em;
@@ -16,6 +17,8 @@
 .release-h2 {
   color: var(--detail-white);
   font-size: 18px;
+  font-weight: 400;
+  padding: 0.5em;
 }
 .release {
   position: relative;
@@ -40,4 +43,11 @@
 }
 .release::after {
   filter: blur(3.5em);
+}
+.head {
+  width: 100%;
+  color: var(--detail-white);
+}
+.head > p {
+  font-weight: 300;
 }

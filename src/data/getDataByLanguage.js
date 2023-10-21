@@ -41,15 +41,15 @@ export function getMoviesByLanguageConfig(movies, ascending = false) {
       {
         label: "Number of movies",
         data: languageCountsArray,
-        backgroundColor: backgroundColor, // Sätt fyllningsfärgen till transparent
+        backgroundColor: 'rgba(0, 0, 0, 0)', // Ange opacity 0 (0% genomsiktighet)
         borderColor: border,
         borderWidth: 1.5,
         radius: 170,
         lineTension: 0.8,
         hoverBackgroundColor: "#7259ff",
         borderRadius: 10,
-        // hoverBackgroundColor: "#D33636",
       },
     ],
   };
-}
+  };
+

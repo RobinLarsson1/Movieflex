@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import "./styles/release.css";
 import {
   Chart as ChartJS,
@@ -30,6 +31,13 @@ ChartJS.register(
   Legend
 );
 
+const animations = {
+  initial: { opacity: 0, x: 500 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: -500 },
+  transition: { duration: 0.5, ease: "easeInOut" },
+};
+
 const Month = () => {
   const featureMoviesByMonthConfig = getFeatureByMonthConfig(featureData);
   const documentaryMoviesByMonthConfig =
@@ -38,6 +46,13 @@ const Month = () => {
 
   return (
     <section className="release-sect">
+      <motion.div className="head" variants={animations} initial="initial"
+        animate="animate"
+        exit="exit"
+        transition="transition">
+        <h2>Movies by release date</h2>
+        <p>Here, you'll find data on the release date of films available in each category</p>
+      </motion.div>
       <div className="release feature">
         <h2 className="release-h2">Feature movies by release month!</h2>
         <Bar data={featureMoviesByMonthConfig} />

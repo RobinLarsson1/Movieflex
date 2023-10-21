@@ -62,4 +62,21 @@
 .menu-icon {
   color: var(--detail-white);
   font-size: 30px;
+  cursor: pointer;
+  margin-left: 1em;
+}
+.me {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.me-link {
+  color: var(--detail-white);
+}
+.linked-icon {
+  font-size: 30px;
+  margin-left: 0.25em;
+  color: var(--detail-purple);
 }

@@ -21,7 +21,7 @@ const LanguageCharts = () => {
   const allMoviesConfig = getMoviesByLanguageConfig(allMoviesData);
 
   return (
-    <section>
+    <section className="language-sect">
       <motion.div
         variants={animations}
         initial="initial"

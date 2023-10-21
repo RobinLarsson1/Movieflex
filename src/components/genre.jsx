@@ -6,6 +6,7 @@ import documentariesData from "../data/documentaries.json";
 import specialsData from "../data/specials.json";
 import featureData from "../data/feature-films.json";
 import "./styles/genre.css";
+import { motion } from "framer-motion";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -17,8 +18,8 @@ const Genre = () => {
   );
 
   return (
-    <section className="genre-sect">
-      <h2 className="genre-h2">Movies by genres!</h2>
+    <section className="genre-sect">  
+       <h2 className="genre-h2">Movies by genres!</h2>
       <Bar data={allMoviesByGenreConfig} />
     </section>
   );

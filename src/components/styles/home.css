@@ -7,17 +7,258 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 10em;
+  overflow: hidden;
+}
+.animated-sect {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10em;
+  overflow: hidden;
+  position: absolute;
+  z-index: -100;
+  padding-left: 8em;
+}
+.heading {
+  position: relative;
+}
+.home-p {
+  margin-left: 85px;
+  color: #BABABA;
+  font-size: 20px;
+  animation: pFade 1.3s ease-in;
+  position: absolute;
+  bottom: -10px;
+  left: 10px;
+  font-weight: 300;
 }
 .hero-text {
   color: var(--detail-white);
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: onLoad 1s ease-in-out;
+  position: relative;
+  text-align: center;
 }
-.home-h1,
-.home-icon {
+
+.hero-text::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+}
+.home-h1 {
   font-size: 80px;
 }
 .home-icon {
+  font-size: 90px;
+}
+.home-h1{
+  position: relative;
+  text-shadow: 1.5px 1.5px 3px #7259ff;
+}
+.home-icon {
   color: var(--detail-purple);
+  animation: rotateIcon 1.1s ease-in-out;
+  margin-top: 0.06em;
+}
+
+.animated {
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  z-index: -4;
+}
+.animated > * {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  
+}
+:root {
+  --animation-duration-1: 5s;
+  --animation-duration-2: 8s;
+  --animation-duration-3: 6s;
+  --animation-duration-4: 10s;
+  --animation-duration-5: 7s;
+  --animation-duration-6: 4s;
+  --animation-duration-7: 9s;
+  --animation-duration-8: 8s;
+  --animation-duration-9: 6s;
+  --animation-duration-10: 7s;
+  --animation-duration-11: 3s;
+  --animation-duration-12: 11s;
+  --animation-duration-13: 4s;
+  --animation-duration-14: 8s;
+}
+
+.animated > * {
+  background-color: var(--detail-purple);
+}
+
+.animated > *::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 20px #7259ff; /* Vit glödeffekt */
+  z-index: -1; /* Placera det under huvudelementet */
+}
+
+
+
+.animated > *:nth-child(1) {
+  left: 10%;
+  width: min(5em, 0.5em);
+  height: min(5em, 0.5em);
+  animation: animatedback var(--animation-duration-1) linear infinite;
+}
+
+.animated > *:nth-child(2) {
+  left: 18%;
+  width: min(6em, 0.5em);
+  height: min(6em, 0.5em);
+  animation: animatedback var(--animation-duration-2) linear infinite;
+}
+
+.animated > *:nth-child(3) {
+  left: 50%;
+  width: min(4em, 0.5em);
+  height: min(4em, 0.5em);
+  animation: animatedback var(--animation-duration-3) linear infinite;
+}
+
+.animated > *:nth-child(4) {
+  left: 78%;
+  width: min(7em, 0.5em);
+  height: min(7em, 0.5em);
+  animation: animatedback var(--animation-duration-4) linear infinite;
+}
+
+.animated > *:nth-child(5) {
+  left: 90%;
+  width: min(8em, 0.5em);
+  height: min(8em, 0.5em);
+  animation: animatedback var(--animation-duration-5) linear infinite;
+}
+
+.animated > *:nth-child(6) {
+  left: 5%;
+  width: min(3em, 0.5em);
+  height: min(3em, 0.5em);
+  animation: animatedback var(--animation-duration-6) linear infinite;
+}
+
+.animated > *:nth-child(7) {
+  left: 99%;
+  width: min(9em, 0.5em);
+  height: min(9em, 0.5em);
+  animation: animatedback var(--animation-duration-7) linear infinite;
+}
+
+.animated > *:nth-child(8) {
+  left: 45%;
+  width: min(6em, 0.5em);
+  height: min(6em, 0.5em);
+  animation: animatedback var(--animation-duration-8) linear infinite;
+}
+
+.animated > *:nth-child(9) {
+  left: 37%;
+  width: min(4em, 0.5em);
+  height: min(4em, 0.5em);
+  animation: animatedback var(--animation-duration-9) linear infinite;
+}
+
+.animated > *:nth-child(10) {
+  left: 69%;
+  width: min(7em, 0.5em);
+  height: min(7em, 0.5em);
+  animation: animatedback var(--animation-duration-10) linear infinite;
+}
+.animated > *:nth-child(11) {
+  left: 97%;
+  width: min(4em, 0.5em);
+  height: min(4em, 0.5em);
+  animation: animatedback var(--animation-duration-11) linear infinite;
+}
+.animated > *:nth-child(12) {
+  left: 29%;
+  width: min(3em, 0.5em);
+  height: min(3em, 0.5em);
+  animation: animatedback var(--animation-duration-12) linear infinite;
+}
+.animated > *:nth-child(13) {
+  left: 66%;
+  width: min(10em, 0.5em);
+  height: min(10em, 0.5em);
+  animation: animatedback var(--animation-duration-13) linear infinite;
+}
+.animated > *:nth-child(14) {
+  left: 91%;
+  width: min(14em, 0.5em);
+  height: min(14em, 0.5em);
+  animation: animatedback var(--animation-duration-14) linear infinite;
+}
+
+
+
+
+@keyframes onLoad {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  } 
+}
+@keyframes rotateIcon {
+  0% {
+    transform: rotate(0deg);
+    width: 2em;
+    height: 2em;
+    opacity: 0;
+  }
+  87% {
+    transform: rotate(380deg);
+    width: 2em;
+    height: 2em;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes animatedback{
+  0%{
+    transform: translateY(0%) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0.9 ;
+  }
+
+}
+@keyframes pFade {
+  0%{
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }

@@ -1,10 +1,11 @@
 import React from "react";
-import { RiMovieLine } from "react-icons/ri";
+import { RiMovie2Line } from "react-icons/ri";
 import { BsGlobeEuropeAfrica } from "react-icons/bs";
 import { BsCalendar2Date } from "react-icons/bs";
-import { LiaTheaterMasksSolid } from "react-icons/lia";
+import { TbCategory2 } from "react-icons/tb";
 import { BiTimeFive } from "react-icons/bi";
 import { HiMenuAlt2 } from "react-icons/hi";
+import { CiLinkedin } from "react-icons/ci";
 import { motion } from "framer-motion";
 import "./styles/navbar.css";
 import { Link } from "react-router-dom";
@@ -23,7 +24,7 @@ const Navbar = () => {
   return (
     <nav className="nav-bar">
       <div className="logo">
-        <RiMovieLine className="logo-icon" />
+        <RiMovie2Line className="logo-icon" />
         <Link to="/">
           <h2 className="nav-h2">Movieflex</h2>
         </Link>
@@ -37,7 +38,7 @@ const Navbar = () => {
             whileHover="hover"
             whileTap="tap"
           >
-            <LiaTheaterMasksSolid className="li-icon" />
+            <TbCategory2 className="li-icon" />
             Genres
           </motion.li>
         </Link>
@@ -75,6 +76,10 @@ const Navbar = () => {
           </motion.li>
         </Link>
       </ul>
+      <div className="me">
+        <Link to='https://www.linkedin.com/in/robinlarsson01/' target="_blank" className="me-link"><p>Made by: Robin Larsson</p></Link>
+        <CiLinkedin className="linked-icon"/>
+      </div>
     </nav>
   );
 };
