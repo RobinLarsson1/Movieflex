@@ -68,12 +68,12 @@
 .me {
   position: absolute;
   bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .me-link {
   color: var(--detail-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .linked-icon {
   font-size: 30px;

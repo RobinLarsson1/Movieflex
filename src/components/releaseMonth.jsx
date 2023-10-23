@@ -20,6 +20,7 @@ import {
   getFeatureByMonthConfig,
   getDocumentariesByMonthConfig,
   getSpecialsByMonthConfig,
+  getMoviesByMonthConfig,
 } from "../data/getDataByMonth";
 
 ChartJS.register(
@@ -43,15 +44,27 @@ const Month = () => {
   const documentaryMoviesByMonthConfig =
     getDocumentariesByMonthConfig(documentariesData);
   const specialsMoviesByMonthConfig = getSpecialsByMonthConfig(specialsData);
+  const allMoviesByMonthConfig = getMoviesByMonthConfig(
+    featureData,
+    documentariesData,
+    specialsData
+  );
 
   return (
     <section className="release-sect">
-      <motion.div className="head" variants={animations} initial="initial"
+      <motion.div
+        className="head"
+        variants={animations}
+        initial="initial"
         animate="animate"
         exit="exit"
-        transition="transition">
+        transition="transition"
+      >
         <h2>Movies by release date</h2>
-        <p>Here, you'll find data on the release date of films available in each category</p>
+        <p>
+          Here, you'll find data on the release date of films available in each
+          category
+        </p>
       </motion.div>
       <div className="release feature">
         <h2 className="release-h2">Feature movies by release month!</h2>
@@ -64,6 +77,10 @@ const Month = () => {
       <div className="release specials">
         <h2 className="release-h2">Specials movies by release month!</h2>
         <Bar data={specialsMoviesByMonthConfig} />
+      </div>
+      <div className="release specials">
+        <h2 className="release-h2">All movies by release month!</h2>
+        <Bar data={allMoviesByMonthConfig} />
       </div>
     </section>
   );

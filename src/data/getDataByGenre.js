@@ -1,28 +1,25 @@
 export function getAllMoviesByGenreConfig(documentaries, specials, feature) {
   const allData = [...documentaries, ...specials, ...feature];
 
-  const genreData = {};
+  const genreCounts = {};
 
   allData.forEach((movie) => {
-    let genre = movie.Genre;
+    const genre = movie.Genre || "Documentary"; // Använd "Documentary" som standard om genre är falskt
 
-    if (!genre) {
-      genre = "Documentary";
-    }
-
-    if (genreData[genre]) {
-      genreData[genre]++;
+    if (genreCounts[genre]) {
+      genreCounts[genre]++;
     } else {
-      genreData[genre] = 1;
+      genreCounts[genre] = 1;
     }
   });
 
   const border = "#7259ff"; // Färg för gränsen (border)
   const backgroundColor = "rgba(19, 25, 47, 0.5)";
 
-  const uniqueGenres = Object.keys(genreData);
-  const genreCountArray = uniqueGenres.map((genre) => genreData[genre]);
-  genreCountArray.sort((a, b) => b - a);
+  const uniqueGenres = Object.keys(genreCounts); // lista med alla genrer med keys
+  const genreCountArray = uniqueGenres.map((genre) => genreCounts[genre]); //antalet i varje genre
+
+  genreCountArray.sort((a, b) => b - a); // Sortera i fallande ordning
 
   return {
     labels: uniqueGenres,

@@ -6,16 +6,16 @@ export function getAllMoviesByDurationConfig(documentaries, specials, feature) {
   // Konvertera längden till minuter och lägg till en ny egenskap "DurationInMinutes" i filmobjekten
   allData.forEach((movie) => {
     const duration = movie.Runtime;
-    const parts = duration.split(' ');
-    let totalMinutes = 0;
+    const parts = duration.split(" "); //delar upp tiden i h och m
+    let totalMinutes = 0; //används för att räkna total tid.
 
     for (let i = 0; i < parts.length; i++) {
-      if (parts[i] === 'h') {
+      if (parts[i] === "h") {
         const hours = parseInt(parts[i - 1]);
-        totalMinutes += hours * 60;
-      } else if (parts[i] === 'min') {
+        totalMinutes += hours * 60; //gör om timmar till minuter
+      } else if (parts[i] === "min") {
         const minutes = parseInt(parts[i - 1]);
-        totalMinutes += minutes;
+        totalMinutes += minutes; //adderar ihop båda
       }
     }
 
@@ -26,6 +26,7 @@ export function getAllMoviesByDurationConfig(documentaries, specials, feature) {
   allData.sort((a, b) => a.DurationInMinutes - b.DurationInMinutes);
 
   const durationData = {};
+
   allData.forEach((movie) => {
     const durationInMinutes = movie.DurationInMinutes;
     if (durationData[durationInMinutes]) {
@@ -35,14 +36,17 @@ export function getAllMoviesByDurationConfig(documentaries, specials, feature) {
     }
   });
 
-  const uniqueLengths = Object.keys(durationData);
-  const durationCountArray = uniqueLengths.map((duration) => durationData[duration]);
+  const uniqueLengths = Object.keys(durationData); //lista med alla längder som keys
+  const durationCountArray = uniqueLengths.map(
+    (duration) => durationData[duration] // antalet i varje längd
+  );
 
+  //skapar labels för alla längder som har fler än 1 film i sig
   const labels = uniqueLengths.map((duration) => {
     const hours = Math.floor(duration / 60);
     const minutes = duration % 60;
     if (hours === 0) {
-      return`${minutes}min`
+      return `${minutes}min`;
     } else {
       return `${hours}h ${minutes}min`;
     }

@@ -77,8 +77,14 @@ const Navbar = () => {
         </Link>
       </ul>
       <div className="me">
-        <Link to='https://www.linkedin.com/in/robinlarsson01/' target="_blank" className="me-link"><p>Made by: Robin Larsson</p></Link>
-        <CiLinkedin className="linked-icon"/>
+        <Link
+          to="https://www.linkedin.com/in/robinlarsson01/"
+          target="_blank"
+          className="me-link"
+        >
+          <p>Made by: Robin Larsson</p>
+          <CiLinkedin className="linked-icon" />
+        </Link>
       </div>
     </nav>
   );

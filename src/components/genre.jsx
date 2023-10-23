@@ -18,8 +18,8 @@ const Genre = () => {
   );
 
   return (
-    <section className="genre-sect">  
-       <h2 className="genre-h2">Movies by genres!</h2>
+    <section className="genre-sect">
+      <h2 className="genre-h2">Movies by genres!</h2>
       <Bar data={allMoviesByGenreConfig} />
     </section>
   );

@@ -16,6 +16,16 @@ const monthNames = [
   "November",
   "December",
 ];
+// Sorteringsfunktion för månader
+function sortMonths(monthData) {
+  return Object.keys(monthData)
+    .sort((a, b) => monthNames.indexOf(a) - monthNames.indexOf(b))
+    .reduce((sorted, key) => {
+      sorted[key] = monthData[key];
+      return sorted;
+    }, {});
+}
+
 // Funktion för att gruppera filmer per månad och kategori
 export function groupMoviesByMonth(data) {
   const monthsData = {};
@@ -28,29 +38,21 @@ export function groupMoviesByMonth(data) {
     if (!monthsData[month]) {
       monthsData[month] = 0;
     }
-   
 
     monthsData[month]++;
   });
 
-  // Sortera månaderna i ordning
-  const sortedMonthsData = Object.keys(monthsData)
-    .sort((a, b) => monthNames.indexOf(a) - monthNames.indexOf(b))
-    .reduce((sorted, key) => {
-      sorted[key] = monthsData[key];
-      return sorted;
-    }, {});
-
-  return sortedMonthsData;
+  // Använd sorteringsfunktionen för att sortera månaderna
+  return sortMonths(monthsData);
 }
 
-// En separat modul för att generera konfigurationer
-export function generateMonthConfig(data, title, colors) {
+// Funktion för att generera konfigurationer
+export function generateMonthConfig(data, title) {
   const monthData = groupMoviesByMonth(data);
 
   const border = "#7259ff"; // Färg för gränsen (border)
   const backgroundColor = "rgba(19, 25, 47, 0.5)";
-  
+
   // Skapa en lista med alla månader
   const allMonths = monthNames;
 
@@ -61,13 +63,8 @@ export function generateMonthConfig(data, title, colors) {
     }
   });
 
-  // Sortera månaderna i ordning
-  const sortedMonthData = Object.keys(monthData)
-    .sort((a, b) => monthNames.indexOf(a) - monthNames.indexOf(b))
-    .reduce((sorted, key) => {
-      sorted[key] = monthData[key];
-      return sorted;
-    }, {});
+  // Använd sorteringsfunktionen för att sortera månaderna
+  const sortedMonthData = sortMonths(monthData);
 
   return {
     labels: Object.keys(sortedMonthData),
@@ -84,19 +81,23 @@ export function generateMonthConfig(data, title, colors) {
   };
 }
 
-  // Använd funktionerna för att generera konfigurationer för olika kategorier
-  export function getDocumentariesByMonthConfig() {
-    return generateMonthConfig(
-      documentariesData,
-      "Documentaries by Month",
-      colors
-    );
-  }
+// Använd funktionerna för att generera konfigurationer för olika kategorier
+export function getDocumentariesByMonthConfig() {
+  return generateMonthConfig(documentariesData, "Documentaries by Month");
+}
 
 export function getFeatureByMonthConfig() {
-  return generateMonthConfig(featureData, "Feature Films", colors);
+  return generateMonthConfig(featureData, "Feature Films");
 }
 
 export function getSpecialsByMonthConfig() {
-  return generateMonthConfig(specialsData, "Specials by Month", colors);
+  return generateMonthConfig(specialsData, "Specials by Month");
+}
+export function getMoviesByMonthConfig(
+  featureData,
+  documentariesData,
+  specialsData
+) {
+  const allData = [...featureData, ...documentariesData, ...specialsData];
+  return generateMonthConfig(allData, "All Movies by Month");
 }

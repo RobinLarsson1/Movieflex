@@ -26,11 +26,11 @@
 }
 .home-p {
   margin-left: 85px;
-  color: #BABABA;
+  color: var(--detail-white);
   font-size: 20px;
   animation: pFade 1.3s ease-in;
   position: absolute;
-  bottom: -10px;
+  bottom: -8px;
   left: 10px;
   font-weight: 300;
 }
@@ -45,7 +45,7 @@
 }
 
 .hero-text::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   z-index: -3;
@@ -56,7 +56,7 @@
 .home-icon {
   font-size: 90px;
 }
-.home-h1{
+.home-h1 {
   position: relative;
   text-shadow: 1.5px 1.5px 3px #7259ff;
 }
@@ -73,10 +73,8 @@
   z-index: -4;
 }
 .animated > * {
-  background-color: black;
   position: absolute;
   bottom: 0;
-  
 }
 :root {
   --animation-duration-1: 5s;
@@ -89,7 +87,7 @@
   --animation-duration-8: 8s;
   --animation-duration-9: 6s;
   --animation-duration-10: 7s;
-  --animation-duration-11: 3s;
+  --animation-duration-11: 4s;
   --animation-duration-12: 11s;
   --animation-duration-13: 4s;
   --animation-duration-14: 8s;
@@ -106,11 +104,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 20px #7259ff; /* Vit glödeffekt */
-  z-index: -1; /* Placera det under huvudelementet */
+  box-shadow: 0 0 20px #7259ff;
+  z-index: -1;
 }
-
-
 
 .animated > *:nth-child(1) {
   left: 10%;
@@ -206,9 +202,6 @@
   animation: animatedback var(--animation-duration-14) linear infinite;
 }
 
-
-
-
 @keyframes onLoad {
   0% {
     transform: scale(0.6);
@@ -220,7 +213,7 @@
   100% {
     transform: scale(1);
     opacity: 1;
-  } 
+  }
 }
 @keyframes rotateIcon {
   0% {
@@ -240,25 +233,24 @@
   }
 }
 
-@keyframes animatedback{
-  0%{
+@keyframes animatedback {
+  0% {
     transform: translateY(0%) rotate(0deg);
     opacity: 0;
   }
   100% {
     transform: translateY(-100vh) rotate(720deg);
-    opacity: 0.9 ;
+    opacity: 0.9;
   }
-
 }
 @keyframes pFade {
-  0%{
+  0% {
     opacity: 0;
   }
   75% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
