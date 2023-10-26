@@ -61,21 +61,17 @@
   font-weight: 400;
 }
 
-/* canvas.lang-chart {
+canvas.lang-chart {
   animation: drop-in 0.5s ease 200ms backwards;
 }
 
 @keyframes drop-in {
   0% {
     opacity: 0;
-    transform: translateX(50px);
-  }
-  75% {
-    opacity: 0.7;
-    transform: translateX(-10px);
+    transform: translateX(100px);
   }
   100% {
     opacity: 1;
     transform: translateX(0px);
   }
-} */
+}

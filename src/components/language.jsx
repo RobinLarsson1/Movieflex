@@ -22,6 +22,10 @@ const chartOptionsLanguage = {
       },
     },
   },
+  animation: {
+    duration: 1500, // Fördröjer animeringen i 2 sekunder
+    easing: "easeInOutExpo", // Använder en kurva med inbyggd fördröjning
+  },
 };
 
 const LanguageCharts = () => {

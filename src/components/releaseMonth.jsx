@@ -57,6 +57,10 @@ export const chartOptions = {
       },
     },
   },
+  animation: {
+    duration: 1300, // Fördröjer animeringen i 2 sekunder
+    easing: "easeInOutExpo", // Använder en kurva med inbyggd fördröjning
+  },
 };
 
 const Month = () => {

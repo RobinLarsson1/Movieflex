@@ -56,7 +56,11 @@ const Duration = () => {
         <p>Here, you'll find data by the duration of each movie</p>
       </motion.div>
       <div className="duration-div">
-        <Line data={allMoviesByDurationConfig} options={chartOptions} />
+        <Line
+          data={allMoviesByDurationConfig}
+          options={chartOptions}
+          className="duration-chart"
+        />
       </div>
     </section>
   );
