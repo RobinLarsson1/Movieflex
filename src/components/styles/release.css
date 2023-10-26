@@ -5,19 +5,15 @@
   flex-wrap: wrap;
   margin-left: 2.5em;
   gap: 3em;
+  flex-direction: column;
 }
 .release-sect > *.release {
   background-color: var(--secondary-blue);
   padding: 1em;
   border-radius: 5px;
-  width: 40em;
+  width: 60em;
 }
-.release-h2 {
-  color: var(--detail-white);
-  font-size: 18px;
-  font-weight: 400;
-  padding: 0.5em;
-}
+
 .release {
   position: relative;
 }
@@ -43,13 +39,29 @@
   filter: blur(3.5em);
 }
 .head {
-  width: 100%;
+  width: 40em;
   color: var(--detail-white);
-  display: flex;
-  flex-direction: column;
-  align-items: start;
   margin-top: 3em;
 }
 .head > p {
   font-weight: 300;
+}
+
+canvas.release-chart {
+  animation: drop-in 0.5s ease 250ms backwards;
+}
+
+@keyframes drop-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  75% {
+    opacity: 0.7;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }

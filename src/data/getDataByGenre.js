@@ -30,7 +30,7 @@ export function getAllMoviesByGenreConfig(documentaries, specials, feature) {
         backgroundColor: backgroundColor, // Sätt fyllningsfärgen till transparent
         borderColor: border,
         borderWidth: 1.5,
-        radius: 250,
+
         hoverBackgroundColor: "#7259ff",
         borderRadius: 10,
         width: 50,

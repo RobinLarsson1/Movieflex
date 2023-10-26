@@ -5,12 +5,23 @@ import documentariesData from "../data/documentaries.json";
 import specialsData from "../data/specials.json";
 import featureData from "../data/feature-films.json";
 import { motion } from "framer-motion";
+import { commonFontOptions } from "./releaseMonth";
 
 const animations = {
   initial: { opacity: 0, x: 500 },
   animate: { opacity: 1, x: 0 },
   exit: { opacity: 0, x: -500 },
   transition: { duration: 0.5, ease: "easeInOut" },
+};
+
+const chartOptionsLanguage = {
+  plugins: {
+    legend: {
+      labels: {
+        font: commonFontOptions,
+      },
+    },
+  },
 };
 
 const LanguageCharts = () => {
@@ -39,19 +50,35 @@ const LanguageCharts = () => {
       <div className="language-chart">
         <motion.div className="language-pie">
           <h3 className="language-h3">All Movies</h3>
-          <Pie data={allMoviesConfig} />
+          <Pie
+            data={allMoviesConfig}
+            options={chartOptionsLanguage}
+            className="lang-chart"
+          />
         </motion.div>
         <div className="language-pie">
           <h3 className="language-h3">Documentaries</h3>
-          <Pie data={documentariesConfig} />
+          <Pie
+            data={documentariesConfig}
+            options={chartOptionsLanguage}
+            className="lang-chart"
+          />
         </div>
         <div className="language-pie">
           <h3 className="language-h3">Specials</h3>
-          <Pie data={specialsConfig} />
+          <Pie
+            data={specialsConfig}
+            options={chartOptionsLanguage}
+            className="lang-chart"
+          />
         </div>
         <div className="language-pie">
           <h3 className="language-h3">Feature Films</h3>
-          <Pie data={featureConfig} className="pie" />
+          <Pie
+            data={featureConfig}
+            className="lang-chart"
+            options={chartOptionsLanguage}
+          />
         </div>
       </div>
     </section>

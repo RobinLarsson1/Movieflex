@@ -4,7 +4,6 @@ import { BsGlobeEuropeAfrica } from "react-icons/bs";
 import { BsCalendar2Date } from "react-icons/bs";
 import { TbCategory2 } from "react-icons/tb";
 import { BiTimeFive } from "react-icons/bi";
-import { HiMenuAlt2 } from "react-icons/hi";
 import { CiLinkedin } from "react-icons/ci";
 import { motion } from "framer-motion";
 import "./styles/navbar.css";
@@ -28,7 +27,6 @@ const Navbar = () => {
         <Link to="/">
           <h2 className="nav-h2">Movieflex</h2>
         </Link>
-        <HiMenuAlt2 className="menu-icon" />
       </div>
       <ul className="link-ul">
         <Link to="/genres">
@@ -82,7 +80,7 @@ const Navbar = () => {
           target="_blank"
           className="me-link"
         >
-          <p>Made by: Robin Larsson</p>
+          <p className="me-p">Made by: Robin Larsson</p>
           <CiLinkedin className="linked-icon" />
         </Link>
       </div>

@@ -1,16 +1,16 @@
 @import "./root.css";
 
-.duration-sect {
+.duration-div {
   background-color: var(--secondary-blue);
   width: 60em;
-  margin: 2em;
+  margin: 3em;
   padding: 2em;
   border-radius: 5px;
   position: relative;
 }
 
-.duration-sect::before,
-.duration-sect::after {
+.duration-div::before,
+.duration-div::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -26,9 +26,12 @@
   border-radius: inherit;
   animation: rotation 15s linear infinite;
 }
-.duration-sect::after {
+.duration-div::after {
   filter: blur(3.5em);
 }
-.duration-h2 {
+.duration-head {
+  margin-left: 3em;
   color: var(--detail-white);
+  margin-top: 3em;
+  width: 40em;
 }

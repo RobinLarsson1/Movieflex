@@ -23,14 +23,15 @@
   color: var(--detail-white);
   padding: 1em;
   width: 100%;
+  margin-left: 0.25em;
 }
 .logo-icon {
-  font-size: 30px;
+  font-size: 36px;
   color: var(--detail-purple);
 }
 .li-icon {
   /* color: var(--detail-white); */
-  font-size: 24px;
+  font-size: 28px;
 }
 .link-ul {
   display: flex;
@@ -46,11 +47,11 @@
   height: 20em;
 }
 .li {
-  margin-top: 1em;
+  margin-top: 2em;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  cursor: p;
+  cursor: pointer;
   color: var(--detail-white);
 }
 .li > * {
@@ -58,25 +59,64 @@
 }
 .nav-h2 {
   color: var(--detail-white);
+  font-size: 26px;
 }
-.menu-icon {
-  color: var(--detail-white);
-  font-size: 30px;
-  cursor: pointer;
-  margin-left: 1em;
-}
+
 .me {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-bottom: 1em;
 }
 .me-link {
   color: var(--detail-white);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+}
+.me-p {
+  margin-right: 2em;
 }
 .linked-icon {
   font-size: 30px;
   margin-left: 0.25em;
   color: var(--detail-purple);
+  animation: hithere 1.5s ease infinite;
+  position: absolute;
+}
+
+@keyframes hithere {
+  30% {
+    transform: scale(1.1);
+  }
+  40%,
+  60% {
+    transform: rotate(-20deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(20deg) scale(1.1);
+  }
+  70% {
+    transform: rotate(0deg) scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bounce2 {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
