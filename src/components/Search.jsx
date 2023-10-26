@@ -58,7 +58,7 @@ const Search = () => {
       {filteredMovies.length === 1 &&
         filteredMovies.map((movie) => (
           <ul className="search-result" key={movie.Title}>
-            <li>{movie.Genre || "Dokumentary"}</li>
+            <li>{movie.Genre || "Documentary"}</li>
             <li> Released: {movie.Premiere}</li>
             <li> Duration: {movie.Runtime}</li>
             <li> Language: {movie.Language}</li>

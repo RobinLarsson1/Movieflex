@@ -29,3 +29,6 @@ html {
 a {
   text-decoration: none;
 }
+.crosshair {
+  cursor: crosshair;
+}

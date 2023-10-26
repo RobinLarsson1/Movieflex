@@ -3,7 +3,7 @@
 .release-sect {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 2.5em;
+  margin-left: 3em;
   gap: 3em;
   flex-direction: column;
 }
