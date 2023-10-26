@@ -28,6 +28,7 @@
 .logo-icon {
   font-size: 36px;
   color: var(--detail-purple);
+  margin-right: 0.1em;
 }
 .li-icon {
   /* color: var(--detail-white); */
@@ -86,6 +87,11 @@
   animation: hithere 1.5s ease infinite;
   position: absolute;
 }
+.link-c:hover > * .li-icon {
+  transform-origin: top center;
+	animation: swing 2s ease ;
+}
+
 
 @keyframes hithere {
   30% {
@@ -120,3 +126,12 @@
     transform: translateY(-15px);
   }
 }
+
+@keyframes swing {
+  20% { transform: rotate(15deg); }	
+	40% { transform: rotate(-10deg); }
+	60% { transform: rotate(5deg); }	
+	80% { transform: rotate(-5deg); }	
+	100% { transform: rotate(0deg); }
+}
+

@@ -29,7 +29,7 @@ const Navbar = () => {
         </Link>
       </div>
       <ul className="link-ul">
-        <Link to="/genres">
+        <Link to="/genres" className="link-c">
           <motion.li
             className="genre li"
             variants={liVariants}
@@ -40,7 +40,7 @@ const Navbar = () => {
             Genres
           </motion.li>
         </Link>
-        <Link to="/languages">
+        <Link to="/languages" className="link-c">
           <motion.li
             className="language li"
             variants={liVariants}
@@ -51,7 +51,7 @@ const Navbar = () => {
             Languages
           </motion.li>
         </Link>
-        <Link to="/durations">
+        <Link to="/durations" className="link-c">
           <motion.li
             className="duration li"
             variants={liVariants}
@@ -62,7 +62,7 @@ const Navbar = () => {
             Duration
           </motion.li>
         </Link>
-        <Link to="/release">
+        <Link to="/release" className="link-c">
           <motion.li
             className="released li"
             variants={liVariants}

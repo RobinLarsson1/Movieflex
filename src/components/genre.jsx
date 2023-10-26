@@ -42,7 +42,6 @@ const Genre = () => {
         </p>
       </motion.div>
       <div className="genre-div">
-        <h2 className="genre-h2">Movies by genres!</h2>
         <Bar
           data={allMoviesByGenreConfig}
           options={chartOptions}
