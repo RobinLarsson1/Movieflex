@@ -20,4 +20,6 @@ li {
 .search-li {
   padding: 1em 0em;
   cursor: pointer;
+  z-index: 100;
 }
+

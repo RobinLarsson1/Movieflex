@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { getAllMoviesByGenreConfig } from "../data/getDataByGenre";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Bar } from "react-chartjs-2";
@@ -35,10 +35,9 @@ const Genre = () => {
         exit="exit"
         transition="transition"
       >
-        <h2>Movies by release date</h2>
+        <h2>Movies by genres</h2>
         <p>
-          Here, you'll find data on the release date of films available in each
-          category
+          Here, you'll find data on the number of movies in each genre
         </p>
       </motion.div>
       <div className="genre-div">

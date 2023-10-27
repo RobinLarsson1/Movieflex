@@ -48,7 +48,7 @@
   height: 20em;
 }
 .li {
-  margin-top: 2em;
+  
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -91,7 +91,9 @@
   transform-origin: top center;
 	animation: swing 2s ease ;
 }
-
+.link-c {
+  margin-top: 3em;
+}
 
 @keyframes hithere {
   30% {

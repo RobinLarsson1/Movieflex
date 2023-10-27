@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { color, motion } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import "./styles/release.css";
 import {
   Chart as ChartJS,
@@ -78,7 +78,7 @@ const Month = () => {
       >
         <h2>Movies by release month</h2>
         <p>
-          Here, you'll find data on the release month of films available in each
+          Here, you'll find data on the release month of movies available by
           category
         </p>
       </motion.div>

@@ -47,7 +47,7 @@ const LanguageCharts = () => {
       >
         <h2 className="language-h2">Movies by Language</h2>
         <p className="language-p">
-          Here, you'll find data on the number of films available for each
+          Here, you'll find data on the number of movies available for each
           language
         </p>
       </motion.div>
